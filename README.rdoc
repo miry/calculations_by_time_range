@@ -14,8 +14,8 @@ You could count how many people register by day:
   User.counts_by_day
 
 
-Found sum of ages by month:
-  User.sums_by_month
+Found sum of ages by month in field updated_at:
+  User.sums_by :month, 'age', 'updated_at'
 
 == Note on Patches/Pull Requests
  

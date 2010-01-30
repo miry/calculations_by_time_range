@@ -16,8 +16,9 @@ module JetThoughts
 
     COLUMNS.each do |k,v|
       OPERATIONS.each do |o|
-        define_method "#{o.pluralize}_by_#{k.to_s}" do
-          calculations_by_time_column(o.to_sym, v, :column => 'id', :time_column => 'created_at')
+        define_method "#{o.pluralize}_by_#{k.to_s}" do |*args|
+          column, time_column = args
+          calculations_by_time_column(o.to_sym, v, :column => column || 'id', :time_column => time_column || 'created_at')
         end
 
         define_method "#{o.pluralize}_by" do |*args|
