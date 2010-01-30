@@ -1,8 +1,8 @@
 module CalculationsByTimeRange
   module ActiveRecord
     module Calculations
-      @@time_zone_offset_in_hours = Time.zone.utc_offset / 3600
-      QUERY = (ActiveRecord::Base.connection.adapter_name == "PostgreSQL") ? "EXTRACT(%s FROM %s + INTERVAL '%d hour')" : "EXTRACT(%s FROM %s + INTERVAL %d hour)"
+
+      TIME_OFFSET = Time.zone.utc_offset / 3600
 
       COLUMNS = {
         :year => [:year],
@@ -31,6 +31,7 @@ module CalculationsByTimeRange
       private
 
       def calculations_by_time_column(operation, fields = [], opts = {})
+        query = (::ActiveRecord::Base.connection.adapter_name == "PostgreSQL") ? "EXTRACT(%s FROM %s + INTERVAL '%d hour')" : "EXTRACT(%s FROM %s + INTERVAL %d hour)"
         options = {:time_column => 'created_at', :column => 'id'}
         options = options.merge(opts)
 
@@ -38,7 +39,7 @@ module CalculationsByTimeRange
         select_q, order_by_q, group_by_q = [], [], []
 
         fields.each_with_index do|range, indx|
-          q = QUERY % [range, options[:time_column], @@time_zone_offset_in_hours]
+          q = query % [range, options[:time_column], TIME_OFFSET]
           select_q << ((q + " AS %s_%s") % [range.to_s, options[:time_column]])
           group_by_q << q
           order_by_q << 2 + indx

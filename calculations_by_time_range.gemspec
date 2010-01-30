@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "calculations_by_time_range.gemspec",
      "lib/calculations_by_time_range.rb",
+     "lib/calculations_by_time_range/active_record/calculations.rb",
      "rails/init.rb",
      "test/helper.rb",
      "test/test_calculations_by_time_range.rb"
