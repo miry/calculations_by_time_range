@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "calculations_by_time_range.gemspec",
      "lib/calculations_by_time_range.rb",
      "rails/init.rb",
      "test/helper.rb",
