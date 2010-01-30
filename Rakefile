@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "calculations_by_time_range"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Add new methods for calculates agregate values in time range.}
+    gem.description = %Q{A methods for calculates agregate values by time range.}
     gem.email = "miry.sof@gmail.com"
     gem.homepage = "http://github.com/miry/calculations_by_time_range"
     gem.authors = ["Michael Nikitochkin"]

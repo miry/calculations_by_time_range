@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Nikitochkin"]
   s.date = %q{2010-01-30}
-  s.description = %q{Add new methods for calculates agregate values in time range.}
+  s.description = %q{A methods for calculates agregate values by time range.}
   s.email = %q{miry.sof@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{A methods for calculates agregate values by time range.}
+  s.summary = %q{Add new methods for calculates agregate values in time range.}
   s.test_files = [
     "test/helper.rb",
      "test/test_calculations_by_time_range.rb"

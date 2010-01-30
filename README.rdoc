@@ -2,6 +2,21 @@
 
 Add new methods for ActiveRecord to get agregate values by time range.
 
+Usage:
+
+Example you have model User with attributes:
+  updated_at
+  created_at
+  name
+  age
+
+You could count how many people register by day:
+  User.counts_by_day
+
+
+Found sum of ages by month:
+  User.sums_by_month
+
 == Note on Patches/Pull Requests
  
 * Fork the project.
