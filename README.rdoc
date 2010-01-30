@@ -1,21 +1,35 @@
-= calculations_by_time_range
+= Calculations By Time Range
 
 Add new methods for ActiveRecord to get agregate values by time range.
 
-Usage:
+== Install & use
 
-Example you have model User with attributes:
-  updated_at
-  created_at
-  name
-  age
+Install the gem from rubyforge:
 
-You could count how many people register by day:
+  sudo gem install calculations_by_time_range
+
+Now just set it as a dependency in your project and you are ready to go.
+
+You can also install this as a plugin:
+
+  script/plugin install git://github.com/miry/calculations_by_time_range.git
+
+See below for usage examples.
+
+== Usage
+
+  # We have the following model
+  User(id: integer, created_at: datetime, updated_at: datetime, username: string, age: integer)
+
+  # CalculationsByTimeRange gives you a bunch of named scopes for free:
   User.counts_by_day
+  User.counts_by(:day)
+  User.counts_by(:day, '*', 'updated_at')
+  User.sums_by(:week, 'age')
 
-
-Found sum of ages by month in field updated_at:
-  User.sums_by :month, 'age', 'updated_at'
+== Examples with Searchlogic and scopes
+  
+  User.created_at_gt(1.day.ago).counts_by_hours
 
 == Note on Patches/Pull Requests
  
@@ -29,4 +43,4 @@ Found sum of ages by month in field updated_at:
 
 == Copyright
 
-Copyright (c) 2010 Michael Nikitochkin. See LICENSE for details.
+Copyright (c) 2010 {Michael Nikitochkin of JetThoughts}[http://www.jetthoughts.com], released under the MIT license
