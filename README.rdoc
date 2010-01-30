@@ -1,6 +1,6 @@
 = calculations_by_time_range
 
-Description goes here.
+Add new methods for ActiveRecord to get agregate values by time range.
 
 == Note on Patches/Pull Requests
  
