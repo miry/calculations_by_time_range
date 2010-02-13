@@ -8,8 +8,8 @@ module CalculationsByTimeRange
         :year => [:year],
         :month => [:year, :month],
         :week => [:year, :month, :week],
-        :day => [:year, :month, :week, :day],
-        :hour => [:year, :month, :week, :day, :hour]
+        :day => [:year, :month, :day, :week],
+        :hour => [:year, :month, :day, :hour, :week]
       }
 
       OPERATIONS = ["sum", "count", "min", "max", "avg"]
