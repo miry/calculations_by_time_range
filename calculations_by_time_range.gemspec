@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{calculations_by_time_range}
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Nikitochkin"]
-  s.date = %q{2010-01-30}
+  s.date = %q{2010-02-13}
   s.description = %q{A methods for calculates agregate values by time range.}
   s.email = %q{miry.sof@gmail.com}
   s.extra_rdoc_files = [

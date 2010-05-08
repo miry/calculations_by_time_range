@@ -2,7 +2,7 @@ module CalculationsByTimeRange
   module ActiveRecord
     module Calculations
 
-      TIME_OFFSET = Time.zone.utc_offset / 3600
+      TIME_OFFSET = Time.zone.now.utc_offset / 3600
 
       COLUMNS = {
         :year => [:year],
